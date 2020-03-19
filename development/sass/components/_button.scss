@@ -1,0 +1,32 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the button component.
+// -----------------------------------------------------------------------------
+%btn-chitiet{
+  @include transition(all .3s ease);
+  margin-top: 30px;
+  @include inline-flex;
+  background-color: #016f86;
+  line-height: 40px;
+  border: 3px solid #016f86;
+  border-radius: 4px;
+  padding: 0 2em;
+  text-transform: uppercase;
+  position: relative;
+  @include setFont(14px , #fff);
+  &::before{
+    //content: "";
+    border: 3px solid #6f3806;
+    width: calc(100% + 16px);
+    height: calc(100% + 16px);
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    }
+    &:hover{
+      color:#ff0;
+    }
+}
+
+.btn-idx{
+  @extend %btn-chitiet;
+}

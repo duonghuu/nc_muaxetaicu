@@ -1,0 +1,121 @@
+@import "less/news.less";
+/* news page */
+.box_containerlienhe{
+
+	padding: 10px;
+	padding-top:0;
+	color:#fff;
+	
+	
+
+	background: #fff;
+
+	border: 1px solid #ccc;
+
+}
+.box_containerlienhe h2{
+	margin:0;
+}
+.box_containerlienhe .date{font-size:12px;font-style:italic}
+.box_containerlienhe  .fix-title{
+	margin-left:106px;
+}
+.box_containerlienhe .box_new
+{
+
+	padding:5px 15px;
+	float:left;
+	border-bottom:1px dotted #A0A0A4;
+	}
+.box_containerlienhe .box_new:last
+{
+	border-bottom:none;
+	}
+
+.box_containerlienhe .box_new h1 a
+{
+	color:#000000;
+	font-size:17px;
+	text-decoration:none;
+  margin:5px;
+	}
+.box_containerlienhe .box_new h1 a:hover
+{
+	color:#F00 !important;
+}
+
+.box_containerlienhe .othernews h1
+{
+	color:#d31158;
+}
+
+.box_containerlienhe .othernews ul
+{
+	list-style:none;
+	margin-top:10px;
+}
+.box_containerlienhe .othernews ul li
+{
+  padding:3px 10px 3px 40px;
+}
+.box_containerlienhe .othernews ul li a
+{
+	color:#d31158;
+	background;url(../images/bg_tieude.png)no-repeat left 0;
+}
+.box_containerlienhe .othernews ul li a:hover
+{
+	color:#D40000;
+}
+
+.wrap-box-newsimg{max-width:100%}
+.wrap-box-news{color:#333}
+.wrap-box-news .news-item{
+	margin-bottom:10px;
+	border-bottom:1px dashed #ccc;
+	padding-bottom:10px;
+}
+.wrap-box-news .news-item h2{
+	margin:0;
+	font-size:19px;
+	line-height:21px;
+	margin-bottom:5px;
+	font-weight:bold;
+	
+	font-family: utm_swissblack;
+}
+.wrap-box-news .news-item  a{
+	color:#36a336;
+}
+.wrap-box-news .news-item  a:hover{
+	text-decoration:none;
+}
+.news-content{
+    padding: 10px;
+    background: #fff;
+    border: 1px solid #ccc;
+}
+.news-content .header h2{
+	font-size:26px;
+	font-weight:bold;
+
+	line-height:28px;
+	margin:0;
+	margin-bottom:2px;
+	
+	font-family: Myriad Pro Bold Condensed;
+}
+.news-content .header .date{
+	font-style:italic;
+	font-size:13px;
+}
+.news-content .description{	
+	font-weight:bold;
+	margin-bottom:10px;
+}
+
+.news-content .other-news  ul{
+	list-style:none;
+	margin:0;
+	padding: 0;
+}

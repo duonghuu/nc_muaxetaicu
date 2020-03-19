@@ -1,0 +1,54 @@
+<section id="main-view">
+<div class="title-global"><h2><?=_project_?></h2></div>
+<div class="projects-main">
+<div class="slidemenu-project">
+<div class="project-navwrap">
+	<a href="javascript:void(0);" class="slidemenu-left btn"></a>
+	<a href="javascript:void(0);" class="slidemenu-right btn"></a>
+	</div>
+<ul class="slidemenu-slide">
+<?php
+
+
+	foreach($result as $k=>$v){
+
+		$ytb = false;
+		$link = $v['photo'];
+
+		if(!$v['mota']){
+			$v['mota'] = 'No title';
+		}
+		if(videoType($v['photo'])=='youtube'){
+			$ytb = "ytb";
+
+			$v['photo'] = 'http://img.youtube.com/vi/'.getYoutubeIdFromUrl($v['photo']).'/0.jpg';
+		}else{
+			if(!checkValidUrl($v['photo'])){
+				$v['photo'] = _upload_hinhanh_l.$v['photo'];
+			}
+			$link = $v['photo'];
+		}
+
+		echo '<li class="slidemenu-item project">
+				<div class="full-projects">
+				<div class="project-left">
+				<a class="view-details " href="#project-46" onClick=">Xem Chi Ti?t</a>
+				<img src="http://bachai.vn/pictures/BH/ct/Mandarin/IMG_0517.jpg" alt="p1"/>
+				<span><h2>KHU PH?C H?P MANDARIN GARDEN</h2></span>
+			 </div><div class="project-right">
+				<a class="view-details " href="#project-44"  onclick="" >Xem Chi Ti?t</a>
+				<img src="http://bachai.vn/pictures/BH/ct/EVN/1.jpg" alt="p1"/>
+				<span><h2>T�a nh� EVN</h2></span>
+			 </div></div></li>';
+
+$X = '<li class="item '.$ytb.'"><div class="rel"><a rel="prettyPhoto[gallery1]" title="'.$v['mota'].'"href="'.$link.'"><img src="'.$v['photo'].'" /></a><div class="desc">'.$v['mota'].'</div></div></li>';
+	}
+
+	echo '</ul>';
+
+?>
+<div class="clear"></div>
+</div></div>
+</section>
+
+

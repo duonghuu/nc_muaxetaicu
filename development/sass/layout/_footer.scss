@@ -1,0 +1,227 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the footer of the site/application.
+// -----------------------------------------------------------------------------
+/*footer*/
+%map-style {
+    overflow: hidden;
+    width: 100%;
+    height: 230px;
+
+    & iframe {
+        overflow: hidden;
+        width: 100%;
+        height: 230px;
+    }
+}
+
+#footer {
+    position: relative;
+    width: 100%;
+    z-index: 5;
+
+    /* margin-top:auto; */
+    
+    background: #5fc7fe url($images-url+"ft-bg.jpg") repeat-x left bottom;
+   
+    
+
+    &::before{
+        // content: "";
+        // height: 7px;
+        // width: 100%;
+        // position: absolute;
+        // left: 0;
+        // top: 0;
+        // background: url($images-url+"menu-bg.jpg") repeat-x;
+    }
+
+    &::after{
+        // content: "";
+        // height: 5px;
+        // width: 100%;
+        // position: absolute;
+        // left: 0;
+        // bottom: 0;
+        // background: url($images-url+"menu-bg.jpg") repeat-x left bottom;
+    }
+
+    .ft-flex {
+        @include flexbox;
+        @include justify-content(space-between);
+
+        padding: 30px 0;
+        .ft-logo {
+            a{
+                img{
+                    
+                }
+            }
+        }
+        .ft-info {
+            position: relative;
+            width: 39.4%;
+
+            .content {
+                color: #fff;
+            }
+        }
+
+        .ft-bando {
+            width: 28.4%;
+
+            
+        }
+
+        .ft-fanpage {
+            width: 37.2%;
+
+            .fanpageplace {
+                height: 250px;
+                overflow: hidden;
+            }
+        }
+
+        .ft-baiviet {
+            width: 22%;
+
+            ul {
+                list-style-type: none;
+
+                li {
+                    
+                    @include setTagAHover(#808080, #ff0);
+                    a {
+                        @include setFont(14px, #808080);
+                        position: relative;
+                        display: block;
+                        padding: 8px 0;
+                        &::before {
+                            content: "\f0da";
+                            margin-right: 7px;
+                            @include setFont(14px, #808080, 700, $font-awesome);
+                        }
+                    }
+                    &+li{
+                        border-top: 1px dashed #333;
+                    }
+                }
+            }
+        }
+    }
+
+    .ft-company {
+        text-transform: uppercase;
+        @include setFont(31px, #fff, 500, $font-oswald);
+        a {
+            color: #fff;
+        }
+    }
+
+    .ft-tit {
+        text-transform: uppercase;
+        position: relative;
+        margin-bottom: 30px;
+
+        strong {
+            position: relative;
+            @include setFont(16px, #fff, 700);
+        }
+
+        span {
+            @include inline-flex;
+            @include align-items(center);
+            @include setFont(16px, #fff, 700);
+
+            position: relative;
+            &::after {
+                content: "";
+                @include box(40px, 3px);
+                position: absolute;
+                bottom: -10px;
+                background-color: #fff;
+            }
+        }
+
+        &::after {
+            //content: "";
+            @include box(152px, 1px);
+            position: absolute;
+            left: 0;
+            bottom: -11px;
+            border-bottom: 1px dashed #fff;
+        }
+    }
+
+    .ft-logo{
+        @include flexbox;
+        @include align-items(center);
+        width: 28.8%;
+        margin-bottom: 1em;
+        a{
+            display: block;
+            img{
+                max-width: 400px;
+            }
+        }
+        
+    }
+
+    %copyright-font {
+        @include setFont(13px, #fff, $font-text);
+    }
+
+    .copyright {
+        position: relative;
+        background: $bg-copyright; 
+        .ft-wrap {
+            min-height: 55px;
+
+            @include flexbox;
+            @include align-items(center);
+            @include justify-content(space-between);
+            border-top: 1px solid #30b7ff;
+            .text {
+                @extend %copyright-font;
+                margin: 5px 0;
+            }
+
+            ul.ft-thongke {
+                list-style-type: none;
+                margin-bottom: 0;
+
+                @include flexbox;
+
+                li {
+                    @extend %copyright-font;
+
+                    @include flexbox;
+                    @include align-items(center);
+
+                    position: relative;
+                    margin: 5px 0;
+
+                    span {
+                        margin-left: 4px;
+                    }
+
+                    & + li {
+                        margin-left: 2em;
+
+                        &::before {
+                            content: "";
+                            background-color: #fff;
+                            width: 1px;
+                            height: 12px;
+                            position: absolute;
+                            left: -1em;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.codebando{
+    @extend %map-style;
+}
+/*end footer*/

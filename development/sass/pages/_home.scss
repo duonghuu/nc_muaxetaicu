@@ -1,0 +1,494 @@
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the home page.
+// -----------------------------------------------------------------------------
+%idx-tit {}
+
+%idx-tit-line {
+    content: "";
+    background: url($images-url + "idx-l.png");
+    height: 7px;
+    width: 134px;
+    position: relative;
+    bottom: -5px;
+}
+
+.idx-tit {
+    h4 {
+        @include setFont(35px, #333, 600);
+        text-transform: capitalize;
+        span, a {
+            color: #333;
+        }
+
+        &::before {
+        }
+
+        &::after {
+        }
+    }
+    &.bdb-1{
+        border-bottom: 1px solid #e6e6e6;
+        margin-bottom: 10px;
+        .idx-desc {
+            margin-bottom: 10px;
+        }
+    }
+    &.line-bottom{
+        margin-bottom: 40px;
+        position: relative;
+        &:after{
+            content: "";
+            @include box(200px, 1px);
+            position: absolute;
+            background-color: #e6e6e6;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -16px;
+        }
+    }
+    img {}
+}
+
+.idx-desc {
+    @include setFont(15px, #808080, 400, $font-text);
+}
+.daotao-bg{
+    padding: 50px 0;
+    .daotao-flex{
+        @include flexbox;
+        @include justify-content(space-between);
+        @include align-items(flex-start);
+        .daotao-info{
+            width: 49%;
+            &__head{
+                border-bottom: 1px solid #e6e6e6;
+                margin-bottom: 20px;
+                .bg-text{
+                    @include setFont(55px, #ededed, 400, $font-UTMHelvetIns);
+                    line-height: 1;
+                    margin-bottom: 5px;
+                }
+                h3{
+                    @include setFont(35px, #333, 600);
+                    text-transform: capitalize;
+                }
+            }
+            &__body{
+                @include setFont(15px, #333);
+                margin-bottom: 20px;
+            }
+            &__foot{
+                a{
+                    @include setFont(14px, #333); 
+                    text-align: center;
+                    line-height: 45px;
+                    display: inline-block;
+                    padding: 0 21px;
+                    border: 1px solid #333;
+                    background: #fff;
+                    text-transform: capitalize;
+                }
+            }
+        }
+        .daotao-form{
+            width: 49%;
+            padding: 1em;
+            @include setBorderRadius(8px);
+            -moz-background-clip: padding;
+            -webkit-background-clip: padding-box;
+            background-clip: padding-box; /* prevents bg color from leaking outside the border */
+            background-color: #fff; /* layer fill content */
+            -moz-box-shadow: 0 0 5px rgba(153,153,153,.75); /* drop shadow */
+            -webkit-box-shadow: 0 0 5px rgba(153,153,153,.75); /* drop shadow */
+            box-shadow: 0 0 5px rgba(153,153,153,.75); /* drop shadow */
+            &__head{
+                h5{
+                    @include setFont(25px, #4d4d4d, 500, $font-oswald);
+                    margin-bottom: 15px;
+                }
+                p{
+                    @include setFont(13px, #4d4d4d, 400, $font-text);
+
+                }
+            }
+            &__body{
+                .form-group{
+                    @include flexbox;
+                    @include justify-content(space-between);
+                    margin-bottom: 10px;
+                    label{
+                        margin: 0;
+                        @include setFont(13px, #4d4d4d, 400, $font-text);
+                        width: 70px;
+                        padding-top: 10px;
+                    }
+                    .form-control{
+                        @include flex(1);
+                    }
+                    input[type="text"].form-control{
+                        height: 40px;
+                    }
+                    textarea.form-control{
+                        height: 100px;
+                    }
+                }
+                &>.text-right{
+                    .btn{
+                        @include setFont(15px, #fff, 400); 
+                        @include inline-flex;
+                        @include align-items(center);
+                        @include justify-content(center);
+                        background: url($images-url+"btn-bg.png");
+                        line-height: 45px;
+                        text-transform: capitalize;
+                        padding: 0 30px;
+                        border: 0;
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+.about-banggia-bg{
+    padding-bottom: 50px;
+  .about-banggia-flex{
+    @include flexbox;
+    @include justify-content(space-between);
+    @include align-items(flex-start);
+    .about-bg{
+        width: 49%;
+        order: 1;
+      .imgsp{
+        img{
+
+        }
+      }
+      .about-content{
+        &__ten{
+            @include setFont(35px, #4d4d4d, 400, $font-UTMHelvetIns);
+            line-height: 1;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+          a{
+               color:#4d4d4d;
+               display: inline-block;
+               border-bottom: 5px solid #4d4d4d;
+               padding-bottom: 16px;
+          }
+        }
+        &__mota{
+                        @include line-clamp($font-size: 15px, $line-height: 1.5, $lines-to-show: 4, $max-height: true);
+                         @include setFont(15px, #333); 
+                        margin-bottom: 10px;
+        }
+        &__link{
+                    @include setFont(14px, #333); 
+                    text-align: center;
+                    line-height: 45px;
+                    display: inline-block;
+                    padding: 0 21px;
+                    border: 1px solid #333;
+                    background: #fff;
+                    text-transform: capitalize;
+        }
+      }
+    }
+    
+    .banggia-bg{
+        width: 49%;
+      
+      .banggia__foot{
+        a{
+           @include setFont(14px, #a6a6a6); 
+            text-align: center;
+            line-height: 45px;
+            display: inline-block;
+            padding: 0 21px;
+            border: 1px solid #a6a6a6;
+            background: #fff;
+            text-transform: capitalize;
+        }
+      }
+    }
+  }
+}
+
+.banggia__body{
+  .banggia__item{
+      padding: 3px 0;
+    .banggia__tieude{
+      @include flexbox;
+      @include justify-content(space-between);
+      @include align-items(center);
+      margin-bottom: 7px;
+      &--bold{
+          @include flex(1);
+          @include flexbox;
+          @include justify-content(space-between);
+          @include align-items(center);
+          position:relative;
+          margin-right: 7px;
+          strong{
+              @include setFont(20px, #4d4d4d, 400, $font-oswald);
+              text-transform: capitalize;
+              margin-right: 7px;
+          }
+          &:after{
+              content:"";
+              @include box(100%, 1px);
+              @include flex(1);
+              @include inline-flex;
+              background-color:#e6e6e6;
+          }
+      }
+      span{
+          @include setFont(20px, #928f8f, 400, $font-oswald);
+      }
+    }
+    p{
+      @include setFont(15px, #808080, 400, $font-text);
+    }
+  }
+}
+
+.dichvu-bg{
+    .dichvu-danhmuc{
+        @include grid($display: flex, $flex-wrap: wrap, $gutter: 0);
+        .dichvu-danhmuc-item{
+            @include grid-col($col: 3, $grid-columns: 12, $gutter: 0);
+            a{
+                display: block;
+                position: relative;
+                color: #fff;
+                figure{
+                    position: relative;
+                    padding-top: 87.9%;
+                    z-index: 1;
+                    margin-bottom: 0;
+                    img{
+                        @extend %img-fill;
+                    }
+                }
+                h2{
+                    
+                    z-index: 2;
+                    margin-bottom: 0;
+                    @include setFont(14px, #fff, 700);
+                    background-color: #333;
+                    padding: 14px;
+                    text-transform: uppercase;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    &:after{
+                        content:"";
+                        width: 0;
+                        height: 0;
+                        border-left: 0px solid transparent;
+                        border-right: 11px solid transparent;
+                        border-top: 44px solid #333;
+                        position: absolute;
+                        top: 0;
+                        right: -11px;
+                    }
+                }
+                .dichvu-overlay{
+                    position: absolute;
+                    z-index: 3;
+                    background-color: transparent;
+                    @include box(100%, 100%);
+                    @include transition(all .2s ease);
+                    display: none;
+                    position:absolute;
+                    top: 0;
+                    left: 0;
+                    padding: 1em;
+
+                    .dichvu-overlay-box{
+                        border: 3px solid #fff;
+                        height: 100%;
+                        padding: 1em;
+                        h3{
+                            text-align:center;
+                            text-transform: uppercase;
+                            @include setFont(15px, #fff, 700);
+                        }
+                        p{
+                            @include setFont(15px, #fff);
+                            @include line-clamp($font-size: 15px, $line-height: 1.5, $lines-to-show: 6, $max-height: true);
+                        }
+                        .text-right{
+                            span{
+                                @include setFont(15px, #fff);
+                                @include inline-flex;
+                                @include align-items(flex-end);
+                                position: relative;
+                                line-height: 1;
+                                &:before{
+                                    content: "";
+                                    @include box(30px, 3px);
+                                    background-color: #fff;
+                                    margin-right: 7px;
+                                    margin-bottom: 2px;
+                                }
+                            }
+                        }
+                    }
+                }
+                &:hover .dichvu-overlay{
+                    background-color: rgba(0, 0, 0, .8);
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+.thuvien-bg{
+    padding: 40px 0 20px;
+    .nav{
+        @include justify-content(center);
+        margin: 20px 0 30px;
+        .nav-item{
+            .nav-link{
+                @include setFont(15px, #333);
+                text-transform: capitalize;
+                border-radius: 0;
+                background-color: #e6e6e6;
+                padding: 9px 20px;
+                &.active{
+                    color: #fff;
+                    background-color: transparent;
+                    background-image: url($images-url+"btn-bg.png");
+                    background-repeat: repeat-x;
+                    background-position: left bottom;
+                }
+            }
+            &+.nav-item{
+                margin-left: 10px;
+            }
+        }
+    }
+}
+
+.thuvien-grid{
+    @include grid($display: flex, $flex-wrap: wrap, $gutter: 2%);
+    .thuvien-grid-col{
+        @include grid-col($col: 3, $grid-columns: 12, $gutter: 2%);
+        a{
+            display: block;
+            figure{
+                position: relative;
+                padding-top: 100%;
+                margin-bottom: 0;
+                img{
+                    @extend %img-fill;
+                }
+            }
+        }
+    }
+}
+
+.ykien-bg{
+    padding: 40px 0;
+    .ykien-main{
+        @include clearfix;
+        margin: 0 -1em;
+        .ykien-item{
+            padding: 0 1em;
+            article{
+                text-align: center;
+                .img-bg{
+                    @include box(245px, 245px, 100%);
+                    padding: 10px;
+                    background: url($images-url+"ykien-bg.png");
+                    background-size: cover;
+                    margin: 0 auto 15px;
+                    figure{
+                        position: relative;
+                        @include box(225px, 225px, 100%);
+                        overflow: hidden;
+                        margin-bottom: 0;
+                        img{
+                            @extend %img-fill;
+                        }
+                    }
+                }
+                .ykien-ten{
+                    @include setFont(15px, #333, 700);
+                    margin-bottom: 0;
+                }
+                .ykien-chucvu{
+                    @include setFont(15px, #808080);
+                    margin-bottom: 10px;
+                    font-style: italic;
+                }
+                .ykien-mota{
+                    @include setFont(15px, #666);
+                    @include line-clamp($font-size: 15px, $line-height: 1.5, $lines-to-show: 4, $max-height: false);
+                }
+            }
+        }
+    }
+}
+
+.tin-video-bg{
+    padding-bottom: 30px;
+    .tin-video-flex{
+        @include flexbox;
+        @include justify-content(space-between);
+        .title{
+            @include setFont(25px, #333, 600);
+            border-bottom: 1px solid #e6e6e6;
+            border-left: 2px solid $theme-color;
+            text-transform: uppercase;
+            padding: 9.5px 12px;
+            line-height: 1;
+            margin-bottom: 25px;
+        }
+        .video-bg{
+            width: 48%;
+            .video-flex{
+                @include flexbox;
+                @include justify-content(space-between);
+            }
+        }
+        .tinnb-bg{
+            width: 48%;
+            .tinnb-main{
+                .tinnb-item{
+                    
+                    a{
+                        @include flexbox;
+                        @include justify-content(space-between);
+                        @include align-items(flex-start);
+                        border-bottom: 1px dashed #333;
+                        padding: 8px 0;
+                        figure{
+                            width: 36%;
+                            margin-bottom: 0;
+                            padding-top: 21.3%;
+                            position: relative;
+                            img{
+                                @extend %img-fill;
+                            }
+                        }
+                        .info{
+                            width: 61.5%;
+                            h5{
+                                @include setFont(15px, #333, 700);
+                                @include line-clamp($font-size: 15px, $line-height: 1.4, $lines-to-show: 2, $max-height: false);
+                            }
+                            .desc{
+                                @include setFont(15px, #333);
+                                @include line-clamp($font-size: 15px, $line-height: 1.4, $lines-to-show: 3, $max-height: false);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

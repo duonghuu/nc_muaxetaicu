@@ -1,0 +1,17 @@
+.news-content .header h2 {
+  color: #359f35;
+}
+.news-content .other-news h3 {
+  color: #359f35;
+  font-size: 20px;
+  padding-bottom: 5px;
+  border-bottom: 1px dashed #359f35;
+  padding-bottom: 4px;
+}
+.other-news a,
+.other-news {
+  color: #359f35;
+}
+.other-news a:hover {
+  color: #444444;
+}

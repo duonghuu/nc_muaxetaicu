@@ -1,0 +1,42 @@
+RewriteEngine on
+Options -Indexes
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+#RewriteCond %{HTTP_HOST} !^muaxetaicu\.net$ [NC]
+#RewriteRule ^(.*)$ http:/muaxetaicu.net/$1 [R=301,L]
+
+DirectoryIndex  index.php
+
+RewriteRule ^([a-zA-Z0-9_-]+).php?type=([0-9]+)$ tools.php?type=$1  [L]
+
+RewriteRule ^([a-zA-Z0-9_-]+).html&p=([0-9]+)$ index.php?com=$1&p=$2  [L]
+
+RewriteRule ^&p=([0-9]+)$ index.php?com=index&p=$1  [L]
+RewriteRule ^([a-zA-Z0-9_-]+).html$ index.php?com=$1  [L]
+
+RewriteRule ^([a-zA-Z0-9_-]+)/([0-9]+)/([a-zA-Z0-9_-]+).html$ index.php?com=$1&id=$2  [L]
+
+
+
+RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([0-9]+)/([a-zA-Z0-9_-]+).html$ index.php?com=$1&id_list=$3 [L]
+RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([0-9]+)/([a-zA-Z0-9_-]+).html&p=([0-9]+)$ index.php?com=$1&id_list=$3&p=$5 [L]
+
+RewriteRule ^([a-zA-Z0-9_-]+)/([0-9]+)_([a-zA-Z0-9_-]+).html$ index.php?com=$1&id_danhmuc=$2 [L]
+RewriteRule ^([a-zA-Z0-9_-]+)/([0-9]+)_([a-zA-Z0-9_-]+).html&p=([0-9]+)$ index.php?com=$1&id_danhmuc=$2&p=$4 [L]
+RewriteRule ^([a-zA-Z0-9_-]+)/([0-9]+)_([a-zA-Z0-9_-]+)/([0-9]+)/([a-zA-Z0-9_-]+).html&p=([0-9]+)$ index.php?com=$1&id_danhmuc=$2&id_list=$4 [L]
+RewriteRule ^([a-zA-Z0-9_-]+)/([0-9]+)_([a-zA-Z0-9_-]+)/([0-9]+)/([a-zA-Z0-9_-]+).html$ index.php?com=$1&id_danhmuc=$2&id_list=$4 [L]
+
+
+RewriteRule ^([a-zA-Z0-9_-]+)/([0-9]+)-([a-zA-Z0-9_-]+).html$ index.php?com=$1&id_cat=$2 [L]
+RewriteRule ^([a-zA-Z0-9_-]+)/([0-9]+)-([a-zA-Z0-9_-]+).html&p=([0-9]+)$ index.php?com=$1&id_cat=$2&p=$4 [L]
+
+RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+).html$ index.php?com=$1&act=$2 [L]
+
+RewriteRule ^([a-zA-Z0-9_-]+).html/keyword=(.*)$ index.php?com=$1&keyword=$2  [L]
+RewriteRule ^([a-zA-Z0-9_-]+).html/keyword=(.*)&p=([0-9]+)$ index.php?com=$1&keyword=$2&p=$3  [L]
+
+php_value upload_max_filesize 20M
+php_value post_max_size 20M
+php_value max_execution_time 200
+php_value max_input_time 200

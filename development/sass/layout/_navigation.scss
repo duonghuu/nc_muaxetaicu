@@ -1,0 +1,229 @@
+%hover_menu_color{
+        //background: url($images-url+"hover-menu.png") repeat-x;
+        color: $color-menu-hover;
+        //background-color: $bg-menu-item-hover;
+    }
+.nav-bg {
+    @include flex(1);
+    position: relative;
+    z-index: 451 !important;
+    margin-left: 30px;
+    @at-root .clsindex #{&}{
+        position: relative;
+        .container{
+            max-width: unset;
+        }
+    }
+    .main-nav {
+        
+        @include flexbox;
+        @include justify-content(space-between);
+        @include align-items(center);
+        
+        width: 100%;
+        min-height: 78px;
+        position: relative;
+        
+        ul {
+            list-style-type: none;
+            margin: 0;
+            li {
+                position: relative;
+                text-align: left;
+                a {
+                    text-decoration: none;
+                    @include setFont(15px, #333, 400, $font-menu);
+
+                }
+                ul {
+                    li {
+                        a {
+                            
+                            
+                            position: relative;
+                            padding: 6px;
+                            @include flexbox;
+                            @include setFont(13px, #333, 400, $font-menu);
+                            border-radius: 17px;
+                            background:#fff;
+                            -moz-box-shadow: 1px 1px 17px 2px rgba(0, 0, 0, 0.3);
+                    -webkit-box-shadow: 1px 1px 17px 2px rgba(0, 0, 0, 0.3);
+                    box-shadow: 1px 1px 17px 2px rgba(0, 0, 0, 0.3);
+                            &::before {
+                                content: "\f105";
+                                margin-right: 5px;
+                                position: relative;
+                                top: 2px;
+                                @include setFont(12px, #333, 700, $font-awesome);
+                            }
+                        }
+                        &:hover {
+                            &>a {
+                                //background: $bg-menu-item-hover;
+                                color: #f00;
+                                &::before {
+                                    color: #f00;
+                                }
+                            }
+                        }
+                        ul {
+                            left: 100% !important;
+                            top: 0 !important;
+                        }
+                        &:not(:last-child) {
+                            //border-bottom: 1px solid rgba(222, 222, 222, 0.31);
+                            margin-bottom:5px;
+                        }
+                    }
+                }
+                &:hover {
+                    &>ul{
+                        opacity: 1;
+                        top: 100%;
+                        visibility: visible;
+                        display: block !important;
+                        background: transparent;
+                    }
+                    & .global-nav-dropdown{
+                        opacity: 1;
+                        visibility: visible;
+                        transition: opacity .1s,visibility 0ms;
+                        transition-delay: .3s;
+                    }
+                    
+                }
+                &:not(.has-menu)>ul {
+                    display: none;
+                    position: absolute;
+                    width: 200px;
+                    /*-moz-box-shadow: 1px 1px 17px 2px rgba(0, 0, 0, 0.3);
+                    -webkit-box-shadow: 1px 1px 17px 2px rgba(0, 0, 0, 0.3);
+                    box-shadow: 1px 1px 17px 2px rgba(0, 0, 0, 0.3);*/
+                    left: 0;
+                    &:empty {
+                        box-shadow: none
+                    }
+                }
+            }
+            
+        }
+        &>ul {
+            @include flexbox;
+            @include align-items(center);
+            @include justify-content(space-between);
+            @include flex(1);
+            z-index: 5;
+            
+            
+            &>li {
+                @include flex(auto);
+                position: relative;
+                z-index: 5;
+               
+                &>a {
+                    @include flexbox();
+                    @include align-items(center);
+                    @include justify-content(center);
+                    @include flex-wrap(wrap);
+                    min-height: 40px;
+                    position: relative;
+                    text-align: center;
+                    text-transform: uppercase;
+                    @include setFont(14px, #fff, 700, $font-menu);
+                    
+                    &::after {
+                            // content: "";
+                            // position: absolute;
+                            // right: 0;
+                            // width: 1px;
+                            // height: 19px;
+                            // background: url($images-url+"menu-line.png");
+                        }
+                }
+                &:not(:last-child) {
+                    &>a {
+                        &::after {
+                            //content: "";
+                            //position: absolute;
+                            //right: 0;
+                            //width: 1px;
+                            //height: 19px;
+                            //background: url($images-url+"menu-line.png");
+                        }
+                    }
+                    &::after {
+                        /* content: url(images/line.png); */position: absolute;
+                        right: -1px;
+                        height: 19px;
+                    }
+                }
+                &:hover {
+                    &>a {
+                        @extend %hover_menu_color;
+                    }
+                }
+                &.active {
+                    &>a {
+                        @extend %hover_menu_color;
+                    }
+                }
+            }
+        }
+        &.nav-left{
+
+        }
+        &.nav-right{
+            
+        }
+    }
+}
+//menu dropdown
+.global-nav-dropdown{
+    right: 0;
+    text-align: left;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    max-height: calc(100vh - 112px);
+    max-width: 100vw;
+    opacity: 0;
+    visibility: hidden;
+    overflow: auto;
+    z-index: 9000;
+    transition: opacity .1s linear .4s,visibility 0ms linear .41s;
+    background-color: #fff;
+    box-shadow: inset 0 -1px 0 0 #e5e5e5;
+    .nav-dropdown-container{
+        max-width: 1024px;
+        margin: 0 auto;
+        padding-bottom: 40px;
+        display: table;
+        .nav-menu-column{
+            width: 200px;
+            display: table-cell;
+            padding-right: 16px;
+            padding-left: 16px;
+            .nav-menu-item{
+                display: block;
+                white-space: nowrap;
+                font-size: 12px;
+                line-height: 16px;
+                margin-bottom: 8px;
+                color: #111;
+
+                &:hover{
+                    color: #6d6d6d;
+                }
+                &.is-header{
+                    font-weight: 700;
+                    letter-spacing: .5px;
+                    font-size: 16px;
+                    line-height: 16px;
+                    margin-top: 20px;
+                    margin-bottom: 16px;
+                    display: block;
+                }
+            }
+        }
+    }
+}

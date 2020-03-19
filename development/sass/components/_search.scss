@@ -1,0 +1,93 @@
+.openBtn {
+    border: none;
+    cursor: pointer;
+    transition: width .6s, border-radius .6s, background .6s, box-shadow .6s;
+    z-index: 400;
+    position: relative;
+    outline: none !important;
+    @include setFont(17px, #fff, 700);
+    @include box(40px, 40px);
+    @include inline-flex;
+    @include align-items(center);
+    @include justify-content(center);
+    background-color: transparent;
+    &::before{
+        //content: "";
+        width: 1px;
+        height: 24px;
+        background-color: #dcdcdc;
+        position:absolute;
+        left:-1em;
+    }
+    &:hover {
+    }
+
+}
+
+#search {
+    // @include inline-flex();
+    // @include align-items(center);
+
+    position: absolute;
+    display: block;    
+    right: 10px;
+    top: 70px;
+    width: 100%;
+    max-width: 250px;
+    z-index: 50;
+    display: none;
+    &.hien {
+        display: block;
+    }
+
+    .my-search {
+        @include flexbox();
+        @include align-items(center);
+        @include justify-content(space-between);
+        
+        overflow: hidden;
+        /*max-width: 475px; */
+        /* width: 230px; */
+        background-color: #cb0212; 
+        border: 0;
+
+        .keyword {
+            @include flex(1);
+            font-size: 0.9em;
+            padding: 0px 10px;
+            border: 0;
+            color: #fff;
+            height: 34px;
+            box-shadow: none;
+            background-color: transparent;
+        }
+
+        .btn_search {
+            @include flexbox();
+            @include align-items(center);
+            @include justify-content(center);
+            width: 35px;
+            height: 28px;
+            cursor: pointer;
+            color: #fff;
+
+            font: {
+                size: 18px;
+                weight: 700;
+            }
+
+            ;
+        }
+
+        &:hover {
+            input {
+            }
+
+        }
+
+        input:focus {
+        }
+
+    }
+
+}

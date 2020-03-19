@@ -1,0 +1,60 @@
+.shop table input
+   {
+	   margin:5px 0px;
+	   height: 24px;
+	   width: 60px;
+	   font-size: 17px;
+}
+   .shop input.btn
+   {
+   -moz-transition: all 0.3s ease;
+-o-transition: all 0.3s ease;
+-ms-transition: all 0.3s ease;
+transition: all 0.3s ease;
+	background: #075992;
+color: #ffffff;
+padding: 3px 10px;
+border: none;
+margin: 5px 3px;
+border-radius: 0;
+padding: 7px 15px;
+background: #02a8f8;
+text-transform: uppercase;
+	width: auto;
+	height: auto;
+	font-size: 13px;
+	padding: 5px 10px;
+}
+   .shop input.btn:hover{background:#111}
+.shop thead{
+    font-family: Myriad Pro Bold Condensed;
+    font-weight: normal !important;
+    font-size: 17px;
+    text-transform: uppercase;
+}
+.shop .price-old,.shop .price-real{font-size: 20px;font-family: Myriad Pro Bold Condensed;}
+.shop .price-old{
+    text-decoration: line-through;
+}
+.shop .price-real{
+    font-weight: bold;
+    color: red;
+}
+.shop a{
+    font-size: 17px;
+}
+.shop .price-total{
+    font-size: 18px;
+    color: red;
+}
+.shop .all-cart-price{font-family:Myriad Pro Bold Condensed;text-align: right;margin-right: 30px;color: red;text-transform: uppercase;font-size: 18px;}
+.shop .product-option{width:100%;clear:both;margin: 6px 0;}
+.shop .product-option label{float:left;font-weight:normal;width:80px}
+.shop .product-option select{float:left;border: 1px solid #A9A9A9;padding: 2px;position: relative;top: -3px;}
+.shop td.empty{
+    font-size: 16px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 20px;
+    color: rgb(17, 17, 17);
+}
