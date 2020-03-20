@@ -16,18 +16,19 @@ $font-barlow-semi-condensed     : 'Barlow Semi Condensed', sans-serif;
 $font-montserrat                : 'Montserrat', sans-serif;
 $font-muli                : 'Muli', sans-serif;
 $font-oswald                : 'Oswald', sans-serif;
+$font-breathepro                : 'UVFBreathePro';
 
-$font-title             : $font-muli;
-$font-text              : $font-muli;
+$font-title             : $font-roboto;
+$font-text              : $font-roboto;
 $font-awesome           : 'Font Awesome 5 Free';
 $font-second            : 'Arial';
 /* ======================== HEADER ======================== */
 $bg-header-top          : #5fc6fd;
 $bg-header              : #5fc6fd;
 /* ======================== MENU ======================== */
-$font-menu              : $font-muli;
+$font-menu              : $font-roboto;
 $color-menu-hover       : #ff0;
-$bg-menu                : transparent;
+$bg-menu                : #ec1313;
 $bg-menu-item           : #fff;
 $bg-menu-item-hover     : #ff0;
 /* ======================== FOOTER ======================== */
@@ -35,9 +36,9 @@ $bg-copyright       : #1ea2e9;
 $bg-footer          : #1ea2e9;
 $theme-color        : #1ea2e9;
 /* ======================== URL ======================== */
-$font-url           : 'css/fonts/';
+$font-url           : 'assets/fonts/';
 $font-awesome-url   : 'css/fontawesome/webfonts/';
-$images-url         : 'images/';
+$images-url         : 'assets/img/';
 /// Regular font family
 /// @type List
 $text-font-stack: 'Open Sans', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !default;

@@ -106,29 +106,10 @@ $img = ($tintuc_detail) ? $config_url."/"._upload_news_l.$tintuc_detail['thumb']
 <meta property="og:site_name" content="<?=$row_title['ten']?>" />
 <title><?=$title_bar?><?=$row_title['ten']?></title>
 <script>var base_url = '<?=$config_url?>';  </script>
-<script src="assets/js/jquery-1.11.1.min.js" type="text/javascript" ></script>
-<script src="assets/bootstrap/js/bootstrap.min.js" type="text/javascript" ></script>
-<script src="assets/js/jquery.lazyload.min.js" type="text/javascript" ></script>
-<script src="assets/bxslider/jquery.bxslider.min.js" type="text/javascript" ></script>
-<script src="assets/lobibox/dist/js/lobibox.min.js" type="text/javascript" ></script>
-<script src="assets/nprogress-master/nprogress.js" type="text/javascript" ></script>
 
-<script>
-jQuery.browser = {};
-(function () {
-    jQuery.browser.msie = false;
-    jQuery.browser.version = 0;
-    if (navigator.userAgent.match(/MSIE ([0-9]+)\./)) {
-        jQuery.browser.msie = true;
-        jQuery.browser.version = RegExp.$1;
-    }
-})();
-</script>
-<!-- 
- <link href='http://fonts.googleapis.com/css?family=Roboto:500,400italic,700italic,300,700,500italic,300italic,400&subset=latin,vietnamese' rel='stylesheet' type='text/css'>
- -->
-<script type="text/javascript" src="assets/fancybox/jquery.fancybox.js"></script>
-<link href="assets/css/normalize.css" type="text/css" rel="stylesheet" />
+
+
+<?php /* <link href="assets/css/normalize.css" type="text/css" rel="stylesheet" />
 <link href="assets/bootstrap/css/bootstrap-theme.min.css" type="text/css" rel="stylesheet" />
 <link href="assets/bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
 <link href="assets/bxslider/jquery.bxslider.css" type="text/css" rel="stylesheet" />
@@ -136,6 +117,13 @@ jQuery.browser = {};
 <link href="assets/lobibox/dist/css/LobiBox.min.css" type="text/css" rel="stylesheet" />
 <link href="assets/nprogress-master/nprogress.css" type="text/css" rel="stylesheet" />
 <link href="assets/css/style.css" type="text/css" rel="stylesheet" />
+
+<link rel="stylesheet" href="assets/iView-master/css/skin1/style.css" type="text/css"/>
+<link rel="stylesheet" href="assets/iView-master/css/iview.css" type="text/css"/>
+<link rel="stylesheet" href="assets/css/pp.css" type="text/css"/>
+
+<link href="assets/carousel/css/style.css" rel="stylesheet" type="text/css" /> */?>
+<link href="main.css" rel="stylesheet" type="text/css" />
 <!--[if lt IE 9]>
 <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
@@ -148,21 +136,16 @@ jQuery.browser = {};
 	</script>
 <![endif]-->
 
-<?php
-	if($lang=='cn'){
-		echo '<link href="assets/css/cn.css" type="text/css" rel="stylesheet" />';
-	}	
-?>
 </head>
 <?php if($maintenance){echo $maintenance;die;}?>
-<body class="status js-status <?=($template!="index") ? 'hasBg': '' ?>" <?php if(@$_GET['com']=='lien-he') echo 'onLoad="initialize()"'; ?>  itemscope itemtype=http://schema.org/WebPage> 
+<body data-tit="<?= $source."_"._template.$template ?>" class="cls<?= $template ?> status js-status 
+	<?=($template!="index") ? 'hasBg': '' ?>" itemscope itemtype=http://schema.org/WebPage> 
 	<div id="loading" class="hide"><span><span class="child"></span></span></div>
 	
 	<?php if($template=="index"){ /*  */ }?>
 
 	<?php include _template."layout/header.php";?>
 	<?php include _template."layout/slider_full.php"; ?>
-	<div class="clearfix"></div>
 <div id="page-wrapper" class="container rel container-fixed">
 <?php if($template=="index"){?>
 	
@@ -184,17 +167,20 @@ jQuery.browser = {};
 		<?php //include _template."layout/facebook_full.php" ?>
 	</div><!-- #page -->
 	<div class="clearfix"></div>
+
 	<?php //include _template."layout/support.php" ?>
 	<?php //include _template."layout/advs.php";?>
 	</div><!--end page-wrapper-->
+	<?php if($source=="index") include _template."layout/bottom.php" ?>
 	<?php include _template."layout/logo.php" ?>
 	<?php //include _template."layout/popup_tpl.php";?>
 	<?php include _template."layout/footer.php";?>
+	<div id="fb-root"></div>
+	<?php include _template."layout/js.php";?>
 	<?php //include _template."layout/facebook.php";?>
 	
 
-<script src="assets/js/less-1.7.3.min.js" type="text/javascript" ></script>
-<script src="assets/js/script.js" type="text/javascript" ></script>
+
 <?=$global_setting['meta_bottom']?>
 </body>
 </html>

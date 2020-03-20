@@ -21,7 +21,7 @@
 
     /* margin-top:auto; */
     
-    background: #5fc7fe url($images-url+"ft-bg.jpg") repeat-x left bottom;
+    background: #103bd9;
    
     
 
@@ -47,7 +47,6 @@
 
     .ft-flex {
         @include flexbox;
-        @include justify-content(space-between);
 
         padding: 30px 0;
         .ft-logo {
@@ -82,27 +81,30 @@
         }
 
         .ft-baiviet {
-            width: 22%;
+            width: 20%;
 
             ul {
                 list-style-type: none;
+                margin: 0;
+                padding: 0;
 
                 li {
                     
-                    @include setTagAHover(#808080, #ff0);
+                    @include setTagAHover(#fff, #ff0);
                     a {
-                        @include setFont(14px, #808080);
+                        @include setFont(15px, #fff);
                         position: relative;
                         display: block;
-                        padding: 8px 0;
+                        
+                        text-decoration: none;
                         &::before {
-                            content: "\f0da";
+                            //content: "\f0da";
                             margin-right: 7px;
                             @include setFont(14px, #808080, 700, $font-awesome);
                         }
                     }
                     &+li{
-                        border-top: 1px dashed #333;
+                        margin-top: 20px;
                     }
                 }
             }
@@ -120,21 +122,21 @@
     .ft-tit {
         text-transform: uppercase;
         position: relative;
-        margin-bottom: 30px;
+        margin-bottom: 20px;
 
         strong {
             position: relative;
-            @include setFont(16px, #fff, 700);
+            @include setFont(18px, #fff, 700);
         }
 
         span {
             @include inline-flex;
             @include align-items(center);
-            @include setFont(16px, #fff, 700);
+            @include setFont(18px, #fff, 700);
 
             position: relative;
             &::after {
-                content: "";
+                //content: "";
                 @include box(40px, 3px);
                 position: absolute;
                 bottom: -10px;
@@ -172,14 +174,13 @@
 
     .copyright {
         position: relative;
-        background: $bg-copyright; 
+        background: #103bd9;
         .ft-wrap {
             min-height: 55px;
 
             @include flexbox;
             @include align-items(center);
             @include justify-content(space-between);
-            border-top: 1px solid #30b7ff;
             .text {
                 @extend %copyright-font;
                 margin: 5px 0;
@@ -224,4 +225,26 @@
 .codebando{
     @extend %map-style;
 }
-/*end footer*/
+.mxhft{
+    @extend %mxh-style;
+}
+.ft-thongke{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    @include flexbox;
+    li{
+        @include setFont(13px, #fff, 400);
+        position: relative;
+        margin-right: 5px;
+        span{
+
+        }
+        &+li{
+            &:before{
+                content: "-";
+                margin-right: 5px;
+            }
+        }
+    }
+}

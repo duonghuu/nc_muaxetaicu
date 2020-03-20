@@ -259,7 +259,7 @@
 <script type="text/javascript" src="assets/js/script.js"></script>
 
 </head>
-<body>
+<body data-tit="<?= $source."_"._template.$template ?>" >
 
 <?php if(isset($_SESSION[$login_name]) && ($_SESSION[$login_name] == true)){?>  
 <div id="wrapper">

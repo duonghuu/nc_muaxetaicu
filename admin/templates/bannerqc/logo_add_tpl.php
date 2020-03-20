@@ -6,7 +6,7 @@
 	 {
 	 ?>
             
-     <object width="980" height="155"  codebase="http://active.macromedia.com/flash4/cabs/swflash.cab#version=4,0,0,0" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000">
+     <object width="540" height="90"  codebase="http://active.macromedia.com/flash4/cabs/swflash.cab#version=4,0,0,0" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000">
               <param NAME="_cx" VALUE="13414">
               <param NAME="_cy" VALUE="6641">
               <param NAME="FlashVars" VALUE>
@@ -25,7 +25,9 @@
               <param NAME="AllowNetworking" VALUE="all">
               <param NAME="AllowFullScreen" VALUE="false">
               <param name="scale" value="ExactFit">
-             <embed src="<?=_upload_hinhanh.$item['photo']?>" quality="High" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" width="980" height="155" scale="ExactFit"></embed>
+             <embed src="<?=_upload_hinhanh.$item['photo']?>" quality="High" 
+              pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" 
+              width="540" height="90" scale="ExactFit"></embed>
             </object>
             
 	 <?php 
@@ -36,7 +38,7 @@
 	 }
 	 ?><br /><br />
 	<b>Banner hiện tại: </b> 
-    <input type="file" name="file" /> <strong>Width:1200px&nbsp;-&nbsp;Height:200px&nbsp;Type:&nbsp;.swf</strong><br />
+    <input type="file" name="file" /> <strong>Width:540px&nbsp;-&nbsp;Height:90px&nbsp;Type:&nbsp;jpg|png|gif</strong><br />
 	<b>Hiển thị</b> <input type="checkbox" name="hienthi" checked="checked" /> <br /><br />
 	<input type="hidden" name="id" value="<?=$item['id']?>" />
 

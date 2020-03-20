@@ -1,7 +1,7 @@
 <div class="wrap-logo">
 	<div class="xwrap">
-<script src="assets/carousel/js/jquery.flexisel.js" type="text/javascript"></script>
-<link href="assets/carousel/css/style.css" rel="stylesheet" type="text/css" />
+
+
 <div class="clearfix"></div>
 <section>
 <div style="">
@@ -31,19 +31,6 @@
 		</div>
 		</div>
 		</section>
-		<script>
-		$().ready(function(){
-			 $("#flexiselDemo3").flexisel({
-				visibleItems:7,
-				animationSpeed: 1000,
-				autoPlay: true,
-				autoPlaySpeed: 3000,            
-				pauseOnHover: true,
-				enableResponsiveBreakpoints: true,
-				
-			});
-		})
-		</script>
 		
 		
 		<style>
@@ -69,7 +56,7 @@ font-size: 16px;
 		}
 		
 		.wrap-logo{background:#fff;padding:20px 0}
-		.wrap-logo .xwrap{border:1px solid red;border-left:0;border-right:0;padding-bottom:20px}
+		.wrap-logo .xwrap{padding-bottom:20px}
 		</style>
 		</div>
 		</div>

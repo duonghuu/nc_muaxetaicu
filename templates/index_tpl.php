@@ -80,22 +80,3 @@
 	
 	
 	
-	<script>
-	$().ready(function(){
-		$(".product-group ul.xa").bxSlider({
-			minSlides:4,
-			maxSlides:4,
-			moveSlides:1,
-			auto:0,
-			controls:1,
-			pager:0,
-			slideWidth:220,
-			slideMargin:15,
-			
-			
-		})
-	})
-	</script>
-
-
-
